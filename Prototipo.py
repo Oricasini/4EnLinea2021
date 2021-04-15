@@ -16,24 +16,28 @@ def completarTableroEnOrden(secuencia,tablero):
 
 def soltarFichaEnColumna(ficha, columna, tablero):
 	for fila in range(6, 0, -1):
-		if tablero [fila-1] [columna-1] == 0:
-			tablero [fila -1] [columna-1] = ficha
+		if tablero [fila - 1] [columna - 1] == 0:
+			tablero [fila - 1] [columna - 1] = ficha
 			return
 
 def dibujarTablero(tablero):
 		for fila in tablero:
 			for celda in fila:
 				if celda == 0:
-					print('  ', end = '')
+					print(' ', end = '')
 				else:
-					print(' %s' % celda, end = '')
-				print('')
+					print(' %s ' % celda, end = '')
+			print('')
 
-def contenidoFila(nroFila, tablero):
-	return tablero[fila-1]
-
-def contenidoColumna(nroColumna, tablero):
-	return tablero[columna-1]
+def secuenciaValida(secuencia):
+	for columna in secuencia:
+		if columna < 1 or columna > 7:
+			return False
+	return True
 
 secuencia = [1, 2, 3, 1]
-dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio))
+
+if secuenciaValida(secuencia):
+	dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
+else:
+	print("Las columnas deberian ir de 1 al 7")
