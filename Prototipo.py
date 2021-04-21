@@ -24,7 +24,7 @@ def dibujarTablero(tablero):
 		for fila in tablero:
 			for celda in fila:
 				if celda == 0:
-					print(' ', end = '')
+				  print(' o ', end = '')
 				else:
 					print(' %s ' % celda, end = '')
 			print('')
