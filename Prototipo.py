@@ -38,9 +38,20 @@ def secuenciaValida(secuencia):
 			return False
 	return True
 
+def contenidoColumna(nro_columna, tablero):
+	columna = []
+	for fila in tablero:
+		celda = fila[nro_columna - 1]
+		columna.append(celda)
+	return columna
+
+
 secuencia = [1, 2, 3, 1]
 
+tablero = []
 if secuenciaValida(secuencia):
-	dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
+	tablero = completarTableroEnOrden(secuencia, tableroVacio())
+	dibujarTablero(tablero)
 else:
 	print("Las columnas deberian ir de 1 al 7")
+print(contenidoColumna(2, tablero))
