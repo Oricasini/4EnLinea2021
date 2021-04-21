@@ -10,7 +10,10 @@ def tableroVacio():
 
 def completarTableroEnOrden(secuencia,tablero):
 	for i, columna in enumerate(secuencia):
-		fichaNumero = 1 + (i % 2)
+		if i % 2 :
+			fichaNumero = 2 
+		else:
+			fichaNumero = 1
 		soltarFichaEnColumna(fichaNumero, columna, tablero)
 	return tablero
 
@@ -24,7 +27,7 @@ def dibujarTablero(tablero):
 		for fila in tablero:
 			for celda in fila:
 				if celda == 0:
-				  print(' o ', end = '')
+				  	print(' o ', end = '')
 				else:
 					print(' %s ' % celda, end = '')
 			print('')
