@@ -45,6 +45,10 @@ def contenidoColumna(nro_columna, tablero):
 		columna.append(celda)
 	return columna
 
+def contenidoFila(nro_fila, tablero):
+    fila = tablero[nro_fila-1]
+    return fila
+
 
 secuencia = [1, 2, 3, 1]
 
@@ -54,4 +58,5 @@ if secuenciaValida(secuencia):
 	dibujarTablero(tablero)
 else:
 	print("Las columnas deberian ir de 1 al 7")
-print(contenidoColumna(2, tablero))
+
+
