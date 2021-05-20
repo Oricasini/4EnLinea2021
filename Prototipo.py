@@ -23,14 +23,16 @@ def soltarFichaEnColumna(ficha, columna, tablero):
 			tablero [fila - 1] [columna - 1] = ficha
 			return
 
-def dibujarTablero(tablero):
-		for fila in tablero:
+def marcoTablero(tablero):
+	for fila in tablero:
+			print("║", end =" ")
 			for celda in fila:
 				if celda == 0:
 				  	print(' o ', end = '')
 				else:
 					print(' %s ' % celda, end = '')
-			print('')
+			print('║')	
+	print("╚══════════════════════╝")
 
 def secuenciaValida(secuencia):
 	for columna in secuencia:
@@ -64,7 +66,7 @@ secuencia = [1, 2, 3, 1]
 tablero = []
 if secuenciaValida(secuencia):
 	tablero = completarTableroEnOrden(secuencia, tableroVacio())
-	dibujarTablero(tablero)
+	marcoTablero(tablero)
 else:
 	print("Las columnas deberian ir de 1 al 7")
 
