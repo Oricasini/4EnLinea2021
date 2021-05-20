@@ -23,7 +23,7 @@ def soltarFichaEnColumna(ficha, columna, tablero):
 			tablero [fila - 1] [columna - 1] = ficha
 			return
 
-def marcoTablero(tablero):
+def marcoTablero(tablero):			#Modifique la función anterior (dibujarTablero) para crear marcoTablero y así mostrar una mejor estetica
 	for fila in tablero:
 			print("║", end =" ")
 			for celda in fila:
