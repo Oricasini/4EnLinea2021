@@ -61,8 +61,10 @@ def contenidoFila(nro_fila, tablero):
 def todasFilas(tablero):
 	return tablero
 
-secuencia = [1, 2, 3, 1]
-
+secuencia_texto = input("ingrese la secuencia de numeros")
+secuencia = []
+for items in secuencia_texto.split(','):
+	secuencia.append(int(items))
 tablero = []
 if secuenciaValida(secuencia):
 	tablero = completarTableroEnOrden(secuencia, tableroVacio())
